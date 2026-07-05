@@ -1,0 +1,160 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Chakra Petch", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-body: "Inter", sans-serif;
+
+  --color-bg: var(--bg);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-panel-2: var(--bg-panel-2);
+  --color-steel-1: var(--steel-1);
+  --color-steel-2: var(--steel-2);
+  --color-steel-3: var(--steel-3);
+  --color-steel-light: var(--steel-light);
+  --color-red-brand: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-primary: var(--red);
+  --color-primary-foreground: #0a0a0a;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-muted-foreground: var(--text-dim);
+}
+
+:root {
+  --bg: #08090a;
+  --bg-panel: #121417;
+  --bg-panel-2: #1a1d21;
+  --steel-1: #2b2f34;
+  --steel-2: #4a4f56;
+  --steel-3: #7d838b;
+  --steel-light: #b8bcc2;
+  --red: #d81f2a;
+  --red-dark: #7a0f18;
+  --red-glow: rgba(216, 31, 42, 0.35);
+  --text: #e9eaec;
+  --text-dim: #8a8f96;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--red);
+    color: #fff;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@utility grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
+}
+
+@utility clip-cut-sm {
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+@utility clip-cut-md {
+  clip-path: polygon(12px 0, 100% 0, 100% 100%, calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+@utility clip-cut-lg {
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+@utility clip-hex {
+  clip-path: polygon(50% 0, 100% 22%, 100% 78%, 50% 100%, 0 78%, 0 22%);
+}
+@utility clip-cert {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+@keyframes scan {
+  0% { top: 4%; }
+  100% { top: 96%; }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 var(--red-glow); }
+  50% { box-shadow: 0 0 24px 4px var(--red-glow); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@utility animate-scan {
+  animation: scan 3.2s linear infinite;
+}
+@utility animate-blink {
+  animation: blink 1s step-end infinite;
+}
+@utility animate-glitch {
+  animation: glitch 220ms steps(2) infinite;
+}
+@utility animate-flicker {
+  animation: flicker 2.4s ease-in-out infinite;
+}
+@utility animate-float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+@utility animate-pulse-red {
+  animation: pulse-red 2.4s ease-in-out infinite;
+}
+@utility animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
