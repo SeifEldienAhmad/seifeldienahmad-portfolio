@@ -366,8 +366,8 @@ function Hero() {
           </div>
 
           <div className="mt-11 flex flex-wrap border-t border-white/5">
-            <StatItem value={7} label="Projects" />
-            <StatItem value={11} label="Certificates" />
+            <StatItem value={7} label="Projects" suffix="+" />
+            <StatItem value={7} label="Certificates" suffix="+" />
             <StatItem value={14} label="Technical Skills" suffix="+" />
           </div>
         </motion.div>
