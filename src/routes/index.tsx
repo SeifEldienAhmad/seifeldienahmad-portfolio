@@ -46,7 +46,7 @@ const PROJECTS = [
     desc: "AI-powered penetration testing assistant with local LLM integration, tool orchestration, command execution workflows, and offensive security automation features.",
     img: "/images/Projects/ghost0Assistant.png",
     tags: ["AI", "LLM", "Offensive Automation"],
-    href: "https://github.com/SeifEldienAhmad",
+    href: "https://github.com/SeifEldienAhmad/ghost0-Assistant",
   },
   {
     idx: "002",

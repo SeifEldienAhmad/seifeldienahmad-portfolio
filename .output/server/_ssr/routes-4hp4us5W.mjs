@@ -61,7 +61,7 @@ var PROJECTS = [
 			"LLM",
 			"Offensive Automation"
 		],
-		href: "https://github.com/SeifEldienAhmad"
+		href: "https://github.com/SeifEldienAhmad/ghost0-Assistant"
 	},
 	{
 		idx: "002",
