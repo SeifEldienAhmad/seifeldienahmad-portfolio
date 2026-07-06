@@ -75,31 +75,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-  title: "Seif Eldien Ahmad | Official Portfolio",
-
-  meta: [
-    {
-      name: "google-site-verification",
-      content: "JK8g75XRkL-UuKcHhBKxU22R5Ezc2uvmsA81oa9SiBE",
-    },
-    {
-      charSet: "UTF-8",
-    },
-    {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1.0",
-    },
-    {
-      name: "description",
-      content:
-        "The official personal website of Seif Eldien Ahmad Mohammad. Learn more about his work in cybersecurity, red teaming, and ethical hacking.",
-    },
-    {
-      name: "keywords",
-      content:
-        "Seif Eldien Ahmad Mohammad, Red Teaming, Cybersecurity, Ethical Hacker, InfoSec",
-    },
-  ],
+    meta: [
+      {
+        charSet: "UTF-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0",
+      },
+    ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
@@ -116,72 +100,66 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-import { Analytics } from "@vercel/analytics/next"
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="H5-F7c8IddP1mAZFTLWmidtG7hFyPQLEQSq3-jzMRKg" />
+        <title>Seif Eldien Ahmad | Official Portfolio</title>
+        <meta name="description" content="The official personal website of Seif Eldien Ahmad Mohammad. Learn more about his work in cybersecurity, red teaming, and ethical hacking." />
+        <meta name="keywords" content="Seif Eldien Ahmad Mohammad, Red Teaming, Cybersecurity, Ethical Hacker, InfoSec" />
         <HeadContent />
         <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-
-        "@id": "https://seifeldienahmad.github.io/#person",
-
-        "name": "Seif Eldien Ahmad Mohammad",
-
-        "alternateName": [
-          "Seif Eldin Ahmad Mohammad",
-          "Seif Eldeen Ahmad Mohammad",
-          "Seif Eldien Ahmad Mohamed",
-          "0xdaphantom",
-          "سيف الدين أحمد محمد"
-        ],
-
-        "url": "https://seifeldienahmad.github.io/",
-
-        "image": "https://seifeldienahmad.github.io/assets/img/profile.png",
-
-        "description":
-          "Junior Penetration Tester focused on offensive security, Linux, networking, and security automation.",
-
-        "jobTitle": "Junior Penetration Tester",
-
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Fayoum University"
-        },
-
-        "knowsAbout": [
-          "Penetration Testing",
-          "Offensive Security",
-          "Red Teaming",
-          "Linux",
-          "Python",
-          "Networking",
-          "Security Automation",
-          "Web Security",
-          "Active Directory",
-          "CTFs"
-        ],
-
-        "sameAs": [
-          "https://github.com/SeifEldienAhmad",
-          "https://www.linkedin.com/in/seifeldienahmad/",
-          "https://dev.to/seifeldienahmad",
-          "https://medium.com/@seifeldienahmad",
-          "https://tryhackme.com/p/0xdaphantom"
-        ]
-      }),
-    }}
-  />
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://seifeldienahmad-pi.vercel.app/#person",
+              "name": "Seif Eldien Ahmad Mohammad",
+              "alternateName": [
+                "Seif Eldin Ahmad Mohammad",
+                "Seif Eldeen Ahmad Mohammad",
+                "Seif Eldien Ahmad Mohamed",
+                "0xdaphantom",
+                "سيف الدين أحمد محمد"
+              ],
+              "url": "https://seifeldienahmad-pi.vercel.app/",
+              "image": "https://seifeldienahmad-pi.vercel.app/assets/img/profile.png",
+              "description": "Junior Penetration Tester focused on offensive security, Linux, networking, and security automation.",
+              "jobTitle": "Junior Penetration Tester",
+              "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Fayoum University"
+              },
+              "knowsAbout": [
+                "Penetration Testing",
+                "Offensive Security",
+                "Red Teaming",
+                "Linux",
+                "Python",
+                "Networking",
+                "Security Automation",
+                "Web Security",
+                "Active Directory",
+                "CTFs"
+              ],
+              "sameAs": [
+                "https://github.com/SeifEldienAhmad",
+                "https://www.linkedin.com/in/seifeldienahmad/",
+                "https://dev.to/seifeldienahmad",
+                "https://medium.com/@seifeldienahmad",
+                "https://tryhackme.com/p/0xdaphantom"
+              ]
+            }),
+          }}
+        />
       </head>
       <body>
         {children}
         <Scripts />
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
