@@ -115,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
+import { Analytics } from "@vercel/analytics/next"
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
