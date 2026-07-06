@@ -7,7 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -143,7 +144,12 @@ function RootShell({ children }: { children: ReactNode }) {
                 "Security Automation",
                 "Web Security",
                 "Active Directory",
-                "CTFs"
+                "CTFs",
+                "pwning",
+                "Bug Bounty Hunting",
+                "Vulnerability Research",
+                "Reverse Engineering",
+                "Social Engineering",
               ],
               "sameAs": [
                 "https://github.com/SeifEldienAhmad",
@@ -171,7 +177,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
