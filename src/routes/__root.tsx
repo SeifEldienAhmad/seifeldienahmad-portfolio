@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -181,6 +182,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <SpeedInsights />
       </body>
     </html>
   );
