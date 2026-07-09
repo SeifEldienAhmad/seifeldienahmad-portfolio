@@ -437,7 +437,7 @@ function Hero() {
 						animate: { opacity: 1 },
 						transition: { delay: .6 },
 						className: "my-4 font-mono text-base tracking-[0.03em] text-steel-light",
-						children: "// AKA 0xdaphantom \xA0|\xA0 Penetration Tester"
+						children: " 0xdaphantom \xA0|\xA0 Penetration Tester"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
 						initial: {

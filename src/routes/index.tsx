@@ -356,7 +356,7 @@ function Hero() {
             transition={{ delay: 0.6 }}
             className="my-4 font-mono text-base tracking-[0.03em] text-steel-light"
           >
-            // AKA 0xdaphantom &nbsp;|&nbsp; Penetration Tester
+             0xdaphantom &nbsp;|&nbsp; Penetration Tester
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
