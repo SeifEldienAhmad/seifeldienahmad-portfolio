@@ -50,22 +50,14 @@ const PROJECTS = [
   },
   {
     idx: "002",
-    title: "Password Cracking Write-up",
-    desc: "GitHub write-up about a password cracking project made during an internship at YCKF.",
-    img: "/images/Projects/passwordCrackingProject.png",
-    tags: ["Password Cracking", "YCKF Internship"],
-    href: "https://github.com/SeifEldienAhmad/Password-Cracking-On-Open-Source-Systems-Project",
-  },
-  {
-    idx: "003",
     title: "Penetration Testing on Metasploitable2",
     desc: "GitHub write-up about a penetration test against Metasploitable2, made during an internship at YCKF.",
     img: "/images/Projects/Penetration Testing on Metasploitable2.png",
-    tags: ["Penetration Testing", "Metasploitable2"],
+    tags: ["Penetration Testing", "Metasploitable2", "YCKF Internship"],
     href: "https://github.com/SeifEldienAhmad/Penetration-Testing-on-Metasploitable2",
   },
   {
-    idx: "004",
+    idx: "003",
     title: "Website Hacking Project",
     desc: "GitHub repo containing a website hacking project write-up made during an internship at YCKF.",
     img: "/images/Projects/websiteHacking.png",
@@ -73,15 +65,31 @@ const PROJECTS = [
     href: "https://github.com/SeifEldienAhmad/Website-Hacking-Project-",
   },
   {
-    idx: "005",
+    idx: "004",
     title: "CCTV Hacking (Simulated Environment)",
     desc: "Lab-only CCTV security assessment, made during an internship at YCKF.",
     img: "/images/Projects/cctv.png",
-    tags: ["IoT", "Lab Only"],
+    tags: ["IoT", "Lab Only", "YCKF Internship"],
     href: "https://github.com/SeifEldienAhmad/CCTV-Hacking-Simulated-Environment-Only-",
   },
   {
+    idx: "005",
+    title: "Password Cracking Write-up",
+    desc: "GitHub write-up about a password cracking project made during an internship at YCKF.",
+    img: "/images/Projects/passwordCrackingProject.png",
+    tags: ["Password Cracking", "YCKF Internship"],
+    href: "https://github.com/SeifEldienAhmad/Password-Cracking-On-Open-Source-Systems-Project",
+  },
+  {
     idx: "006",
+    title: "Enterprise Windows Administration Journey",
+    desc: "GitHub write-up documenting hands-on labs, Windows internals, and core enterprise system administration concepts.",
+    img: "/images/Projects/Enterprise Windows Administration Journey.jpeg",
+    tags: ["Windows", "Microsoft", "System Administration"],
+    href: "https://github.com/SeifEldienAhmad/Enterprise-Windows-Administration-Journey",
+  },
+  {
+    idx: "007",
     title: "RHSA WriteUp",
     desc: "GitHub write-up about the Red Hat System Administration course and what was learned.",
     img: "/images/Projects/rhsa.png",
@@ -89,7 +97,7 @@ const PROJECTS = [
     href: "https://github.com/SeifEldienAhmad/RHSA-WriteUp",
   },
   {
-    idx: "007",
+    idx: "008",
     title: "MyBashScripts",
     desc: "A collection of useful Bash scripts to automate tasks and enhance productivity in Linux environments.",
     img: "/images/Projects/bash_scripts.png",
@@ -109,7 +117,7 @@ const CERTS = [
 ];
 
 const MARQUEE = [
-  "RED TEAM", "PENETRATION TESTING", "OFFENSIVE SECURITY", "LINUX", "0xDAPHANTOM",
+  "RED TEAM", "PENETRATION TESTING", "OFFENSIVE SECURITY", "LINUX", "0xdaphantom",
   "RECON", "EXPLOIT", "PRIVILEGE ESCALATION", "PAYLOAD", "METASPLOIT",
 ];
 
