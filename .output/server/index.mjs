@@ -148,12 +148,12 @@ var public_assets_data_default = {
 		"size": 2062567,
 		"path": "../public/images/Projects/rhsa.png"
 	},
-	"/profile.png": {
+	"/profile.jpeg": {
 		"type": "image/png",
 		"etag": "\"22fea6-qzeJQuCe5SR+Zd1chcbilChH9P8\"",
 		"mtime": "2026-07-06T00:54:10.348Z",
 		"size": 2293414,
-		"path": "../public/profile.png"
+		"path": "../public/profile.jpeg"
 	},
 	"/images/certificates/Seif Eldien Ahmad Mohammad Internship Certificate.jpg": {
 		"type": "image/jpeg",

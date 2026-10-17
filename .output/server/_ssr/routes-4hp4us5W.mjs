@@ -520,7 +520,7 @@ function Hero() {
 							style: { background: "linear-gradient(90deg,transparent,var(--red),transparent)" }
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/profile.png",
+							src: "/profile.jpeg",
 							alt: "Seif Eldien Ahmad Mohammad",
 							className: "h-full w-full object-cover",
 							onError: (e) => {

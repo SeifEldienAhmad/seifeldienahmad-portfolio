@@ -401,7 +401,7 @@ function Hero() {
               style={{ background: "linear-gradient(90deg,transparent,var(--red),transparent)" }}
             />
             <img
-              src="/profile.png"
+              src="/profile.jpeg"
               alt="Seif Eldien Ahmad Mohammad"
               className="h-full w-full object-cover"
               onError={(e) => { (e.currentTarget as HTMLImageElement).src = "logo.jpeg"; }}

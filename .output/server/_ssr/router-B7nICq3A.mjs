@@ -156,7 +156,7 @@ function RootShell({ children }) {
 					"سيف الدين أحمد محمد"
 				],
 				"url": "https://seifeldienahmad.github.io/",
-				"image": "https://seifeldienahmad.github.io/assets/img/profile.png",
+				"image": "https://seifeldienahmad.github.io/assets/img/profile.jpeg",
 				"description": "Junior Penetration Tester focused on offensive security, Linux, networking, and security automation.",
 				"jobTitle": "Junior Penetration Tester",
 				"affiliation": {

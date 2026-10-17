@@ -127,7 +127,7 @@ function RootShell({ children }: { children: ReactNode }) {
                 "سيف الدين أحمد محمد"
               ],
               "url": "https://seifeldienahmad-pi.vercel.app/",
-              "image": "https://seifeldienahmad-pi.vercel.app/assets/img/profile.png",
+              "image": "https://seifeldienahmad-pi.vercel.app/assets/img/profile.jpeg",
               "description": "Junior Penetration Tester focused on offensive security, Linux, networking, and security automation.",
               "jobTitle": "Junior Penetration Tester",
               "affiliation": {
