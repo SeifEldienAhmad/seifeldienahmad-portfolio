@@ -159,7 +159,7 @@ function Portfolio() {
           <motion.img
             src={"logo.jpeg"}
             alt="logo"
-            className="h-[34px] w-[34px] object-contain drop-shadow-[0_0_6px_var(--red-glow)]"
+            className="h-[48px] w-[48px] object-contain drop-shadow-[0_0_6px_var(--red-glow)]"
             whileHover={{ rotate: 8, scale: 1.08 }}
             transition={{ type: "spring", stiffness: 300 }}
           />

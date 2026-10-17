@@ -88,7 +88,7 @@ function ErrorComponent({ error, reset }) {
 }
 var Route$1 = createRootRouteWithContext()({
 	head: () => ({
-		title: "Seif Eldien Ahmad | Official Portfolio",
+		title: "0xdaphantom | Official Portfolio",
 		meta: [
 			{
 				name: "google-site-verification",

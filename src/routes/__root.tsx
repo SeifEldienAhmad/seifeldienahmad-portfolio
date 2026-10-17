@@ -107,7 +107,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="H5-F7c8IddP1mAZFTLWmidtG7hFyPQLEQSq3-jzMRKg" />
-        <title>Seif Eldien Ahmad | Official Portfolio</title>
+        <title>0xdaphantom | Official Portfolio</title>
         <meta name="description" content="The official personal website of Seif Eldien Ahmad Mohammad. Learn more about his work in cybersecurity, red teaming, and ethical hacking." />
         <meta name="keywords" content="Seif Eldien Ahmad Mohammad, Red Teaming, Cybersecurity, Ethical Hacker, InfoSec" />
         <HeadContent />
