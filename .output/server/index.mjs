@@ -16,11 +16,11 @@ globalThis.__nitro_vite_envs__ = services;
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
 	"/favicon.ico": {
-		"type": "image/vnd.microsoft.icon",
-		"etag": "\"3c1d1-B6WK3pfrYQlmaTG3PWX/xrIyxYc\"",
-		"mtime": "2026-07-06T00:54:10.347Z",
-		"size": 246225,
-		"path": "../public/favicon.ico"
+    "type": "image/png",
+    "etag": "\"3c1d1-B6WK3pfrYQlmaTG3PWX/xrIyxYc\"",
+    "mtime": "2026-07-06T00:54:10.347Z",
+    "size": 246225,
+    "path": "../public/favicon.ico"
 	},
 	"/logo.jpeg": {
 		"type": "image/jpeg",
