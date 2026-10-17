@@ -1,6 +1,6 @@
 # Personal Portfolio Website 🌐
 
-This repository contains the source code and assets for my personal portfolio website: [seifeldienahmad.github.io](https://seifeldienahmad.github.io).
+This repository contains the source code and assets for my personal portfolio website: [seifeldienahmad-portfolio](https://seifeldienahmad-portflio.vercel.app).
 
 ---
 
@@ -26,17 +26,6 @@ It’s designed to be clean, responsive, and easy to navigate across devices.
 - HTML5, CSS3, and JavaScript  
 - Responsive design with CSS Flexbox and Grid  
 - GitHub Pages for free hosting and deployment
-
----
-
-## 📂 Repository Structure
-
-- `index.html` — Main landing page  
-- `projects.html` — Detailed projects and write-ups  
-- `certificates.html` — List of certificates  
-- `css/` — Stylesheets  
-- `js/` — JavaScript files  
-- `images/` — Images, icons, and other media
 
 ---
 
