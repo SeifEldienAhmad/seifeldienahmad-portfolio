@@ -9,9 +9,8 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { id: "hero", label: "00 // HOME" },
   { id: "about", label: "01 // ABOUT" },
-  { id: "projects", label: "02 // PROJECTS" },
-  { id: "certs", label: "03 // CERTS" },
-  { id: "contact", label: "04 // CONTACT" },
+  { id: "experience", label: "02 // EXPERIENCE" },
+  { id: "contact", label: "03 // CONTACT" },
 ];
 
 const TECH_SKILLS = [
@@ -106,14 +105,25 @@ const PROJECTS = [
   },
 ];
 
-const CERTS = [
-  { title: "Cybersecurity Training — NTI", img: "/images/certificates/Seif Eldien Ahmad - Cybersecurity nti.jpeg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Seif%20Eldien%20Ahmad%20-%20Cybersecurity%20nti.jpeg" },
-  { title: "YCKF Internship", img: "/images/certificates/Seif Eldien Ahmad Mohammad Internship Certificate.jpg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Seif%20Eldien%20Ahmad%20Mohammad%20Internship%20Certificate.jpg" },
-  { title: "IT Support Training — NTI", img: "/images/certificates/Seif Eldein Ahmad Mohammad - IT.jpg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Seif%20Eldein%20Ahmad%20Mohammad%20-%20IT.jpg" },
-  { title: "Networking Basics — Cisco", img: "/images/certificates/Networking Basics.jpg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/CISCO_%22Networking%20Basics%22_Certificate.jpg" },
-  { title: "Networking Devices & Initial Config", img: "/images/certificates/Networking_Devices_and_Initial_Configuration_certificate.jpg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Networking_Devices_and_Initial_Configuration_certificate.jpg" },
-  { title: "Python Essentials 1", img: "/images/certificates/Python Essentials 1.jpeg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Python%20Essentials%201.jpeg" },
-  { title: "Python Essentials 2", img: "/images/certificates/Python Essential 2.jpg", href: "https://github.com/SeifEldienAhmad/MyCertificates/blob/main/Python%20Essential%202.jpg" },
+const EXPERIENCE_CARDS = [
+  {
+    title: "Penetration Testing",
+    description: "Security research, vulnerability discovery, recon, exploitation, and hands-on labs across Linux and web targets.",
+    href: "/experience/pentest",
+    accent: "RED TEAM",
+  },
+  {
+    title: "IT Support",
+    description: "End-user troubleshooting, systems administration, networking basics, and practical operational support work.",
+    href: "/experience/it",
+    accent: "SYSTEMS",
+  },
+  {
+    title: "Development",
+    description: "Automation, scripting, tooling, and practical application building for cybersecurity and technical workflows.",
+    href: "/experience/development",
+    accent: "BUILD",
+  },
 ];
 
 const MARQUEE = [
@@ -201,8 +211,7 @@ function Portfolio() {
         <Hero />
         <Marquee />
         <About />
-        <Projects />
-        <Certs />
+        <Experience />
         <Contact />
       </main>
 
@@ -568,93 +577,35 @@ function TagCloud({ tags }: { tags: string[] }) {
   );
 }
 
-/* ------------ PROJECTS ------------ */
-function Projects() {
+/* ------------ EXPERIENCE ------------ */
+function Experience() {
   return (
-    <Section id="projects" eyebrow="02 / Projects" title="Selected Work" sub="A mix of client-facing engagements (sanitized), research, and tooling I've built and open-sourced.">
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((p, i) => (
+    <Section id="experience" eyebrow="02 / Experience" title="Experience" sub="A focused overview of the workstreams I develop in across security, support, and software engineering.">
+      <div className="grid gap-6 md:grid-cols-3">
+        {EXPERIENCE_CARDS.map((card, i) => (
           <motion.a
-            key={p.idx}
-            href={p.href}
-            target="_blank"
-            rel="noopener"
+            key={card.title}
+            href={card.href}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ delay: (i % 3) * 0.08, duration: 0.5 }}
+            transition={{ delay: i * 0.08, duration: 0.5 }}
             whileHover={{ y: -8 }}
-            className="clip-cut-lg group flex flex-col overflow-hidden border border-white/5 bg-bg-panel transition-[border-color] duration-300 hover:border-red-brand/40"
+            className="clip-cut-lg group flex min-h-[260px] flex-col justify-between overflow-hidden border border-white/5 bg-bg-panel p-6 transition-[border-color,box-shadow] duration-300 hover:border-red-brand/40 hover:shadow-[0_0_24px_rgba(216,31,42,0.08)]"
           >
-            <div className="relative h-[150px] overflow-hidden border-b border-white/5">
-              <img
-                src={p.img}
-                alt={p.title}
-                className="h-full w-full object-cover grayscale-[.3] contrast-[1.05] transition-transform duration-500 group-hover:scale-110 group-hover:grayscale-0"
-                loading="lazy"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg-panel via-transparent to-transparent" />
+            <div>
+              <span className="font-mono text-[0.72rem] tracking-[0.12em] text-red-brand">// {card.accent}</span>
+              <h3 className="mt-5 font-display text-[1.6rem] uppercase leading-tight">{card.title}</h3>
             </div>
-            <div className="flex flex-1 flex-col gap-3 p-6">
-              <span className="font-mono text-[0.75rem] tracking-[0.1em] text-red-brand">// {p.idx}</span>
-              <h3 className="font-display text-[1.15rem] uppercase leading-tight">{p.title}</h3>
-              <p className="flex-1 text-[0.86rem] leading-[1.7] text-text-dim">{p.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="border border-steel-1 px-2 py-1 font-mono text-[0.65rem] text-steel-3">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <span className="mt-1 inline-flex items-center gap-2 font-mono text-[0.75rem] text-text transition-colors group-hover:text-red-brand">
-                View write-up
-                <motion.span
-                  className="inline-block"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.6, repeat: Infinity }}
-                >→</motion.span>
-              </span>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/* ------------ CERTS ------------ */
-function Certs() {
-  return (
-    <Section id="certs" eyebrow="03 / Certifications" title="Credentials" sub="Industry certifications that back up the hands-on work.">
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {CERTS.map((c, i) => (
-          <motion.a
-            key={c.title}
-            href={c.href}
-            target="_blank"
-            rel="noopener"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ delay: (i % 4) * 0.06, duration: 0.45 }}
-            whileHover={{ y: -6 }}
-            className="clip-cert group flex flex-col overflow-hidden border border-white/5 transition-colors hover:border-red-brand/40"
-            style={{ background: "linear-gradient(160deg,var(--bg-panel-2),var(--bg-panel))" }}
-          >
-            <div className="h-[130px] w-full overflow-hidden border-b border-white/10 bg-black">
-              <img
-                src={c.img}
-                alt={c.title}
-                className="h-full w-full object-cover opacity-90 grayscale-[.4] contrast-[1.05] transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-1 flex-col p-4 text-center">
-              <h4 className="mb-3 flex-1 font-display text-[0.92rem] uppercase leading-tight">{c.title}</h4>
-              <span className="font-mono text-[0.66rem] uppercase tracking-[0.05em] text-red-brand group-hover:text-white">
-                View Certificate →
-              </span>
-            </div>
+            <p className="mt-4 text-[0.9rem] leading-[1.8] text-text-dim">{card.description}</p>
+            <span className="mt-6 inline-flex items-center gap-2 font-mono text-[0.75rem] text-text transition-colors group-hover:text-red-brand">
+              Explore
+              <motion.span
+                className="inline-block"
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity }}
+              >→</motion.span>
+            </span>
           </motion.a>
         ))}
       </div>
@@ -666,7 +617,7 @@ function Certs() {
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <Section id="contact" eyebrow="04 / Contact" title="Let's Talk Security" sub="Have an engagement in mind, a vulnerability to report, or just want to talk shop? Reach out.">
+    <Section id="contact" eyebrow="03 / Contact" title="Let's Talk Security" sub="Have an engagement in mind, a vulnerability to report, or just want to talk shop? Reach out.">
       <div className="grid gap-10 sm:gap-[70px] md:grid-cols-[0.9fr_1.1fr]">
         <FadeUp>
           <p className="mb-7 max-w-[440px] leading-[1.8] text-text-dim">

@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperienceIndexRouteImport } from './routes/experience/index'
+import { Route as ExperienceDevelopmentRouteImport } from './routes/experience/development'
+import { Route as ExperienceItRouteImport } from './routes/experience/it'
+import { Route as ExperiencePentestRouteImport } from './routes/experience/pentest'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperienceIndexRoute = ExperienceIndexRouteImport.update({
+  id: '/experience/',
+  path: '/experience/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceDevelopmentRoute = ExperienceDevelopmentRouteImport.update({
+  id: '/experience/development',
+  path: '/experience/development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceItRoute = ExperienceItRouteImport.update({
+  id: '/experience/it',
+  path: '/experience/it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencePentestRoute = ExperiencePentestRouteImport.update({
+  id: '/experience/pentest',
+  path: '/experience/pentest',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/experience/development': typeof ExperienceDevelopmentRoute
+  '/experience/it': typeof ExperienceItRoute
+  '/experience/pentest': typeof ExperiencePentestRoute
+  '/experience/': typeof ExperienceIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/experience/development': typeof ExperienceDevelopmentRoute
+  '/experience/it': typeof ExperienceItRoute
+  '/experience/pentest': typeof ExperiencePentestRoute
+  '/experience': typeof ExperienceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/experience/development': typeof ExperienceDevelopmentRoute
+  '/experience/it': typeof ExperienceItRoute
+  '/experience/pentest': typeof ExperiencePentestRoute
+  '/experience/': typeof ExperienceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/experience/development'
+    | '/experience/it'
+    | '/experience/pentest'
+    | '/experience/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/experience/development'
+    | '/experience/it'
+    | '/experience/pentest'
+    | '/experience'
+  id:
+    | '__root__'
+    | '/'
+    | '/experience/development'
+    | '/experience/it'
+    | '/experience/pentest'
+    | '/experience/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExperienceDevelopmentRoute: typeof ExperienceDevelopmentRoute
+  ExperienceItRoute: typeof ExperienceItRoute
+  ExperiencePentestRoute: typeof ExperiencePentestRoute
+  ExperienceIndexRoute: typeof ExperienceIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experience/': {
+      id: '/experience/'
+      path: '/experience'
+      fullPath: '/experience/'
+      preLoaderRoute: typeof ExperienceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience/development': {
+      id: '/experience/development'
+      path: '/experience/development'
+      fullPath: '/experience/development'
+      preLoaderRoute: typeof ExperienceDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience/it': {
+      id: '/experience/it'
+      path: '/experience/it'
+      fullPath: '/experience/it'
+      preLoaderRoute: typeof ExperienceItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience/pentest': {
+      id: '/experience/pentest'
+      path: '/experience/pentest'
+      fullPath: '/experience/pentest'
+      preLoaderRoute: typeof ExperiencePentestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExperienceDevelopmentRoute: ExperienceDevelopmentRoute,
+  ExperienceItRoute: ExperienceItRoute,
+  ExperiencePentestRoute: ExperiencePentestRoute,
+  ExperienceIndexRoute: ExperienceIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
