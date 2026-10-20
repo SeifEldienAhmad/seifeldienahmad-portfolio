@@ -160,6 +160,8 @@ function ITPage() {
       </header>
 
       <ExperienceIdentity
+        image="/profile-IT.png"
+        imageAspectRatio="landscape"
         action={
           <a
             href={cvPath}

@@ -1,17 +1,30 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-export function ExperienceIdentity({ action }: { action?: ReactNode }) {
+export function ExperienceIdentity({
+  action,
+  image = "/profile.jpeg",
+  imageAspectRatio = "square",
+}: {
+  action?: ReactNode;
+  image?: string;
+  imageAspectRatio?: "square" | "landscape";
+}) {
+  const imageFrameClassName =
+    imageAspectRatio === "landscape"
+      ? "clip-cut-sm aspect-[4/3] w-48 sm:w-56"
+      : "clip-hex aspect-square w-36 sm:w-44";
+
   return (
     <section className="border-b border-white/5 bg-bg-panel/30 px-4 py-10 sm:px-6 sm:py-14">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 sm:flex-row sm:gap-9">
         <Link
           to="/"
           aria-label="Return to Seif Eldien Ahmad Mohammad's home page"
-          className="clip-hex block aspect-square w-36 shrink-0 overflow-hidden border border-red-brand/30 shadow-[0_0_28px_var(--red-glow)] sm:w-44"
+          className={`${imageFrameClassName} block shrink-0 overflow-hidden border border-red-brand/30 shadow-[0_0_28px_var(--red-glow)]`}
         >
           <img
-            src="/profile.jpeg"
+            src={image}
             alt="Seif Eldien Ahmad Mohammad"
             className="h-full w-full object-cover"
           />

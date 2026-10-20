@@ -51,6 +51,8 @@ function DevelopmentPage() {
       </header>
 
       <ExperienceIdentity
+        image="/profile-Development.png"
+        imageAspectRatio="landscape"
         action={
           <a
             href={cvPath}
