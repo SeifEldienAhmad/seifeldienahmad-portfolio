@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
+import { CredentialPreview } from "../../components/CredentialPreview";
 import { ExperienceIdentity } from "../../components/ExperienceIdentity";
 
 export const Route = createFileRoute("/experience/development")({
@@ -218,26 +219,13 @@ function DevelopmentPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {credentials.map((credential) => (
-              <a
+              <CredentialPreview
                 key={credential.title}
-                href={credential.image}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex min-h-32 items-center gap-4 border border-white/8 bg-bg-panel p-4 transition-colors hover:border-red-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-brand"
-              >
-                <img
-                  src={credential.image}
-                  alt=""
-                  loading="lazy"
-                  className="h-20 w-24 shrink-0 border border-white/10 bg-black object-contain"
-                />
-                <span className="font-display text-sm uppercase leading-6 text-text transition-colors group-hover:text-red-brand">
-                  {credential.title}
-                </span>
-                <span className="sr-only">
-                  Open certificate image in a new tab
-                </span>
-              </a>
+                credential={credential}
+                className="group flex min-h-32 w-full items-center gap-4 border border-white/8 bg-bg-panel p-4 text-left transition-colors hover:border-red-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-brand"
+                thumbnailClassName="h-20 w-24 shrink-0 border border-white/10 bg-black object-contain"
+                titleClassName="font-display text-sm uppercase leading-6 text-text transition-colors group-hover:text-red-brand"
+              />
             ))}
           </div>
         </section>
